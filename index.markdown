@@ -27,7 +27,7 @@ layout: home
 {% for category in all_categories %}
 
    [{{ category }}]({{site.url}}/{{category}})
-
+  {{site.url}}
 {% endfor %}
 
 {%include flashcards.html%}
