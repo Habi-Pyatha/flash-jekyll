@@ -38,16 +38,20 @@ category: #{card.labels[0].name}
 
 #{card.desc}
         """
-        file = File.open("./_posts/#{article_date}-#{slug}.md", "w+") {|f| f.write(content) }
+        file_path= "./_posts/#{article_date}-#{slug}.md"
+        if !File.exist?(file_path) || File.read(file_path) != content
+          file = File.open(file_path, "w+") {|f| f.write(content) }
+        end
         # binding.pry
-        content_cat = """---
+        unless File.exist?("./#{card.labels[0].name}.md")
+          content_cat = """---
 layout: card
 permalink: #{card.labels[0].name}
 ---
-        {%include flashcards.html%}
-        
-        """
-        file=File.open("./#{card.lables[0].name}".md,"w+"){|f| f.write(content_cat)}
+{%include flashcards.html%}
+"""
+          file=File.open("./#{card.labels[0].name}.md","w+"){|f| f.write(content_cat)}
+        end
       end
     end
   end
