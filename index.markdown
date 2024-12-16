@@ -26,7 +26,7 @@ layout: home
 {% assign all_categories = site.posts | map: "category" | uniq %}
 {% for category in all_categories %}
 
-   [{{ category }}]({{site.baseurl}}/{{category}})
+   [{{ category }}]({{site.url}}/{{category}})
 
 {% endfor %}
 
