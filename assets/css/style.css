@@ -1,0 +1,119 @@
+*{
+    text-decoration:none;
+}
+.nav{
+    background-color: red;
+}
+
+.wrapper{
+    width:90%;
+    margin: auto;
+}
+.flashcards{
+    display:grid;
+    /* grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); */
+    grid-template-columns: auto auto auto auto;
+    gap: 20px;
+    /* width: 99%;
+    margin: auto; */
+}
+
+.flashcard{
+    max-width: 400px;
+    min-width:fit-content;
+    min-height: 200px;
+    max-height: 400px;
+    perspective: 369px;
+    padding:5%;
+    box-shadow: 10px 10px 40px rgba(251, 115, 4,0.3);
+    
+}
+
+.flashcard .front,
+.flashcard .back{
+    width:100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    display:column;
+    justify-content: center;
+    align-items: center;
+    background: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: transform 0.5s;
+    padding:5%;
+    box-sizing: border-box;
+}
+
+.flashcard .back {
+    background: #d9f99d;
+    transform: rotateY(180deg);
+}
+
+/* .flashcard:hover .front{
+    transform: rotateY(180deg);
+
+}
+
+.flashcard:hover .back{
+    transform: rotateY(360deg);
+    z-index: 10;
+} */
+
+.flashcard{
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+.flashcard.flipped .front{
+    transform: rotateY(180deg);
+}
+
+.flashcard.flipped .back{
+    transform: rotateY(0deg);
+}
+
+@media only screen and (max-width:1100px){
+    .flashcards{
+        display:grid;
+        /* grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); */
+        grid-template-columns: 1fr 1fr ;
+        gap: 20px;
+        width: 90%;
+        margin: auto; 
+    }
+    
+    .flashcard{
+        max-width: 400px;
+        min-width:fit-content;
+        min-height: 200px;
+        max-height: 400px;
+        perspective: 369px;
+        padding:5%;
+        box-shadow: 10px 10px 40px rgba(251, 115, 4,0.3);
+        
+    }
+}
+
+@media only screen and (max-width: 700px){
+    .flashcards{
+        display:grid;
+        /* grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); */
+        grid-template-columns: 1fr ;
+        gap: 20px;
+        width: 90%;
+        margin: auto; 
+    }
+    
+    .flashcard{
+        max-width: 400px;
+        min-width:fit-content;
+        min-height: 200px;
+        max-height: 400px;
+        perspective: 369px;
+        padding:5%;
+        box-shadow: 10px 10px 40px rgba(251, 115, 4,0.3);
+        font-size: medium;
+    }
+}

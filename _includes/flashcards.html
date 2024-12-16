@@ -1,0 +1,25 @@
+<div class="flashcards">
+{%assign category = page.url | split:"/" | last%}  
+
+  {% for card in site.posts %}
+  {%if card.category==category%}
+    <div class="flashcard">
+      <div class="front">
+        <p>{{ card.title }}</p>
+      </div>
+      <div class="back">
+        <p >{{ card.content }}</p>
+      </div>
+    </div>
+    {%endif%}
+    <!-- test={{ card.content}} -->
+    {% endfor %}
+</div>
+
+  <script>
+  document.querySelectorAll('.flashcard').forEach(card=>{
+    card.addEventListener('click',()=>{
+        card.classList.toggle('flipped');
+    })
+})
+</script>
