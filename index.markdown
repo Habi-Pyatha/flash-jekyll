@@ -26,8 +26,8 @@ layout: home
 {% assign all_categories = site.posts | map: "category" | uniq %}
 {% for category in all_categories %}
 
-   [{{ category }}]({{site.url}}/{{category}})
-  {{site.url}}
+   [{{ category }}]({{site.baseurl}}/{{category}})
+  
 {% endfor %}
 
 {%include flashcards.html%}
