@@ -1,5 +1,5 @@
 ---
 layout: card
-permalink: /Python/
+permalink: /{{site.baseurl}}/Python/
 ---
 {%include flashcards.html%}
