@@ -46,7 +46,7 @@ category: #{card.labels[0].name}
         unless File.exist?("./#{card.labels[0].name}.md")
           content_cat = """---
 layout: card
-permalink: #{card.labels[0].name}
+permalink: /#{card.labels[0].name}/
 ---
 {%include flashcards.html%}
 """

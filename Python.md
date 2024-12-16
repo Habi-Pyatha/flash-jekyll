@@ -1,5 +1,5 @@
 ---
 layout: card
-permalink: Python
+permalink: /Python/
 ---
 {%include flashcards.html%}

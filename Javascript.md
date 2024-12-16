@@ -1,5 +1,5 @@
 ---
 layout: card
-permalink: Javascript
+permalink: /Javascript/
 ---
 {%include flashcards.html%}

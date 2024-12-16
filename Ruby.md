@@ -1,5 +1,5 @@
 ---
 layout: card
-permalink: Ruby
+permalink: /Ruby/
 ---
 {%include flashcards.html%}
